@@ -25,8 +25,8 @@ login.post('/', async (req: Request, res: Response) => {
         const token = generateToken(user.id, remember)
 
         return res.json({ success: true, token, message: 'logged in', remember })
-    } catch (error: any) {
-        return res.status(500).json({ success: false, message: error.message })
+    } catch (error: unknown) {
+        return res.status(500).json({ success: false, message: (error as Error).message })
     }
 })
 
