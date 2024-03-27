@@ -11,7 +11,7 @@ class RevenueController {
     async createRevenue(req: AuthRequest, res: Response) {
         try {
             const { managerName, pointAddress, revenuePerDay, } = req.body
-
+            
             if (!req.isStaff) return res.status(403).json({ success: false, message: "Please provide a stuff user" })
 
             const newRevenues = await prisma.revenue.create({

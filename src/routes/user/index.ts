@@ -8,7 +8,6 @@ const prisma = new PrismaClient()
 
 user.get('/', auth, async (req: AuthRequest, res: Response) => {
     try {
-
         if (req?.user) {
             const user = await prisma.user.findUnique({
                 where: { username: req.user.username }

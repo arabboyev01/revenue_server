@@ -9,8 +9,8 @@ import signUp from './routes/sign-up'
 import revenues from './routes/revenue'
 import user from './routes/user'
 
-app.use(express.json())
 app.use(cors())
+app.use(express.json())
 
 app.use('/v1/api/login', login)
 app.use('/v1/api/register', signUp)

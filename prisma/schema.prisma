@@ -24,7 +24,7 @@ enum UserRole {
 
 model Revenue {
   id            Int      @id @default(autoincrement())
-  managerName   String   @unique
+  managerName   String  
   pointAddress  String
   revenuePerDay Int      @default(0)
   createdAt     DateTime @default(now())
